@@ -15,7 +15,7 @@ export default function Index() {
   const create = async () => {
     try {
       if (isNaN(Number(quantity))) {
-        return Alert.alert('Quantidade', 'A quantidade precisa ser um número!')
+        return Alert.alert('Quantidade', 'A quantidade precisa ser um números!')
       }
       const response = await productDatabase.create({
         name,
