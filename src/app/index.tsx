@@ -28,6 +28,13 @@ export default function Index() {
     }
   }
 
+  const listar = async () => {
+    try {
+    } catch (error) {
+      throw error
+    }
+  }
+
   return (
     <View style={styles.container}>
       <Input placeholder="Nome" onChangeText={setName} value={name} />
@@ -36,7 +43,7 @@ export default function Index() {
         onChangeText={setQuantity}
         value={quantity}
       />
-      <Button title="Cadastrar" />
+      <Button title="Cadastrar" onPress={create} />
     </View>
   )
 }

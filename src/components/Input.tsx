@@ -1,6 +1,12 @@
 import { StyleSheet, TextInput, TextInputProps } from 'react-native'
 export function Input({ ...rest }: TextInputProps) {
-  return <TextInput {...rest} style={styles.container} />
+  return (
+    <TextInput
+      {...rest}
+      style={styles.container}
+      placeholderTextColor={'#999'}
+    />
+  )
 }
 
 const styles = StyleSheet.create({
