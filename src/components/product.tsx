@@ -16,7 +16,5 @@ export function Product({ name, quantity, ...rest }: Props) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'red',
-  },
+  container: {},
 })
