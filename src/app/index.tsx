@@ -34,6 +34,8 @@ export default function Index() {
         quantity: Number(quantity),
       })
 
+      list()
+
       Alert.alert('Produto cadastrado com ID:' + response.insertedRowId)
     } catch (error) {
       console.log(error)
@@ -63,12 +65,15 @@ export default function Index() {
       />
       <Button title="Cadastrar" onPress={create} />
 
+      <Input placeholder="Pesquisar" onChangeText={setSearch} />
+
       <FlatList
         data={products}
         keyExtractor={(item) => String(item.id)}
         renderItem={({ item }) => (
           <Product quantity={item.quantity} name={item.name} />
         )}
+        contentContainerStyle={{ gap: 16 }}
       />
     </View>
   )

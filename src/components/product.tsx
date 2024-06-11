@@ -16,5 +16,11 @@ export function Product({ name, quantity, ...rest }: Props) {
 }
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    backgroundColor: '#cecece',
+    padding: 24,
+    borderRadius: 5,
+    gap: 12,
+    flexDirection: 'row',
+  },
 })
