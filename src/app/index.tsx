@@ -1,14 +1,26 @@
-import { useState } from 'react'
-import { View, Button, StyleSheet, Alert } from 'react-native'
+import { useEffect, useState } from 'react'
+import {
+  View,
+  Button,
+  StyleSheet,
+  Alert,
+  FlatList,
+  Pressable,
+} from 'react-native'
 import { Input } from '@/components/Input'
 
-import { useProductDatabase } from '@/database/useProductDatabase'
+import {
+  useProductDatabase,
+  ProductDatabase,
+} from '@/database/useProductDatabase'
+import { Product } from '@/components/product'
 
 export default function Index() {
   const [id, setId] = useState('')
   const [name, setName] = useState('')
   const [quantity, setQuantity] = useState('')
-  const [products, setProducts] = useState([])
+  const [search, setSearch] = useState('')
+  const [products, setProducts] = useState<ProductDatabase[]>([])
 
   const productDatabase = useProductDatabase()
 
@@ -28,12 +40,18 @@ export default function Index() {
     }
   }
 
-  const listar = async () => {
+  const list = async () => {
     try {
+      const response = await productDatabase.searchByName(search)
+      setProducts(response)
     } catch (error) {
-      throw error
+      console.log(error)
     }
   }
+
+  useEffect(() => {
+    list()
+  }, [search])
 
   return (
     <View style={styles.container}>
@@ -44,6 +62,14 @@ export default function Index() {
         value={quantity}
       />
       <Button title="Cadastrar" onPress={create} />
+
+      <FlatList
+        data={products}
+        keyExtractor={(item) => String(item.id)}
+        renderItem={({ item }) => (
+          <Product quantity={item.quantity} name={item.name} />
+        )}
+      />
     </View>
   )
 }
