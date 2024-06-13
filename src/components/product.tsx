@@ -22,11 +22,11 @@ export function Product({ name, quantity, onDelete, onOpen, ...rest }: Props) {
       </Text>
 
       <TouchableOpacity onPress={onOpen}>
-        <MaterialIcons name="visibility" size={24} color="blue" />
+        <MaterialIcons name="visibility" size={24} color="#000" />
       </TouchableOpacity>
 
       <TouchableOpacity onPress={onDelete}>
-        <MaterialIcons name="delete" size={24} color="red" />
+        <MaterialIcons name="delete" size={24} color="#000" />
       </TouchableOpacity>
     </Pressable>
   )
@@ -34,7 +34,7 @@ export function Product({ name, quantity, onDelete, onOpen, ...rest }: Props) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#cecece',
+    backgroundColor: '#fff',
     padding: 24,
     borderRadius: 5,
     gap: 12,

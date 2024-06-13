@@ -2,28 +2,31 @@ import { useRef } from 'react'
 import { View } from 'react-native'
 import { Tabs } from 'expo-router'
 import { Foundation, Ionicons, FontAwesome5 } from '@expo/vector-icons'
+import { Header } from '../../components/header'
 
 export default function TabLayout() {
   return (
     <View style={{ flex: 1 }}>
+      <Header />
       <Tabs
         screenOptions={{
           tabBarStyle: {
-            backgroundColor: '#000',
-            borderColor: '#000',
+            backgroundColor: '#fff',
+            borderColor: '#fff',
           },
-          tabBarActiveTintColor: '#fff',
-          tabBarInactiveTintColor: '#fff',
+          tabBarActiveTintColor: '#000',
+          tabBarInactiveTintColor: '#0000007a',
           headerShown: false,
-          tabBarShowLabel: false,
         }}
       >
+        {/* tabBarShowLabel: false, */}
         <Tabs.Screen
           name="index"
           options={{
             tabBarIcon: ({ size, color }) => (
               <Foundation name="home" size={size} color={color} />
             ),
+            tabBarLabel: 'Home',
           }}
         />
         <Tabs.Screen
@@ -32,6 +35,7 @@ export default function TabLayout() {
             tabBarIcon: ({ size, color }) => (
               <Ionicons name="add" size={size} color={color} />
             ),
+            tabBarLabel: 'Register',
           }}
         />
       </Tabs>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { View, Button, StyleSheet, Alert, FlatList } from 'react-native'
+import { View, Button, StyleSheet, Alert, FlatList, Text } from 'react-native'
 import { Input } from '@/components/Input'
 import { router } from 'expo-router'
 
@@ -94,15 +94,12 @@ export default function Index() {
 
   return (
     <View style={styles.container}>
-      <Input placeholder="Nome" onChangeText={setName} value={name} />
-      <Input
-        placeholder="Quantidade"
-        onChangeText={setQuantity}
-        value={quantity}
-      />
-      <Button title="Cadastrar" onPress={handleSave} />
-
       <Input placeholder="Pesquisar" onChangeText={setSearch} />
+
+      <View style={styles.content}>
+        <Text style={styles.quantity}>{products.length}</Text>
+        <Text>Total Produtos</Text>
+      </View>
 
       <FlatList
         data={products}
@@ -128,5 +125,22 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 32,
     gap: 16,
+  },
+
+  content: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
+
+  quantity: {
+    backgroundColor: '#fff',
+    padding: 4,
+    width: 30,
+    alignItems: 'center',
+    textAlign: 'center',
+    borderWidth: 2,
+    borderColor: '#ccc',
+    borderRadius: 4,
   },
 })
