@@ -12,7 +12,7 @@ export default function TabLayout() {
             backgroundColor: '#000',
             borderColor: '#000',
           },
-          tabBarActiveTintColor: '#000',
+          tabBarActiveTintColor: '#fff',
           tabBarInactiveTintColor: '#fff',
           headerShown: false,
           tabBarShowLabel: false,
@@ -28,14 +28,6 @@ export default function TabLayout() {
         />
         <Tabs.Screen
           name="register"
-          options={{
-            tabBarIcon: ({ size, color }) => (
-              <Ionicons name="add" size={size} color={color} />
-            ),
-          }}
-        />
-        <Tabs.Screen
-          name="search"
           options={{
             tabBarIcon: ({ size, color }) => (
               <Ionicons name="add" size={size} color={color} />
