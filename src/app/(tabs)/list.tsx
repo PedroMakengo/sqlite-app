@@ -1,9 +1,9 @@
 import { Text, View } from 'react-native'
 
-export default function Products() {
+export default function List() {
   return (
     <View>
-      <Text>Products</Text>
+      <Text>List</Text>
     </View>
   )
 }
