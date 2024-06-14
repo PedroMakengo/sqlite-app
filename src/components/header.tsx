@@ -3,9 +3,9 @@ import { StyleSheet, Text, View } from 'react-native'
 export function Header() {
   return (
     <View style={styles.container}>
-      <Text style={styles.textTitle}>Slite App</Text>
+      <Text style={styles.textTitle}>SQlite App</Text>
       <Text style={styles.textDescription}>
-        Desenvolvendo um app Crud Slite
+        Desenvolvendo um app Crud SQlite
       </Text>
     </View>
   )
