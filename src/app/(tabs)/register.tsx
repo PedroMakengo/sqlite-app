@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Button, StyleSheet, Text, View } from 'react-native'
+import { Button, StyleSheet, Text, View, Alert } from 'react-native'
 import {
   ProductDatabase,
   useProductDatabase,
